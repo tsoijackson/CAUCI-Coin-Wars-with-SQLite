@@ -1,0 +1,33 @@
+
+h1,p {
+	font-family: 'Raleway', sans-serif, !important;
+}
+
+hr {
+	border-width: 3px !important;
+}
+
+body {
+	/*background-color: #29a3a3 !important;*/
+}
+
+.total-fundraised {
+	background-color: #C5E1A5 !important;
+	border-radius: 45px !important;
+}
+
+.coinjar {
+	max-height: 100% !important;
+	max-width: 55% !important;
+}
+
+.chart {
+	width: 100%;
+	min-height: 500px;
+}
+
+.highlight-outer-border {
+	border-style: solid;
+	border-radius: 15px;
+	border-color: red;
+}

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>CAUCI Coin Wars Website</title>
+
+	<link rel = "stylesheet" type = "text/css" href = "style.css">
+	<script defer src="https://use.fontawesome.com/releases/v5.0.4/js/all.js"></script>
+
+
+	<!-- Bootstrap CSS 4.0.0 -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+
+</head>
+<body>
+
+	<nav class="navbar navbar-expand-md navbar-dark sticky-top bg-dark">
+		<a class="navbar-brand">
+			<img src="images/logo.png" width="40" height="40" class="d-inline-block align-top" alt="">
+		</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarsExampleDefault">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item active">
+					<a class="nav-link" href="#"> <i class="fas fa-home fa-2x"></i> <span class="sr-only">(current)</span></a>
+				</li>
+
+
+				<li class="nav-item">
+					<a class="nav-link" href="#stats"> <i class="far fa-chart-bar fa-2x"></i></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#standings"><i class="fas fa-table fa-2x"></i></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="http://www.cauci.com/index.html" target="_blank">
+						<i class="fas fa-users fa-2x"></i>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="https://www.instagram.com/caucirvine/" target="_blank">
+						<i class="fab fa-instagram fa-2x"></i>
+					</a>
+				</li>
+
+			</ul>
+		</div>
+    </nav>
+
+    <div class="jumbotron section">
+    	<div class="container">
+    		<h1 class="display-3">CAUCI COIN WARS</h1>
+    		<p>Chinese Association at University of California of Irvine (CAUCI) has a coin collecting fundraiser every winter quarter. The quarter long fundraiser has board officers compete in contest of who can collect the most coins from general members and at the end of the quarter, the bottom three officers are pied by the club! Every penny counts!</p>
+
+    		<div class="row row-eq-height">
+		    	<div class="col-md-6 text-center">
+		    		<h2 class="display-5">RULES</h1>
+	    			<div class="col-md-10 offset-md-1 text-left">
+	    				<hr/>
+	    				<p class="mb-1">● All bigs/officers carry a "coin jar" on them at all times</p>
+	    				<p class="mb-1">● Coins count as positive points</p>
+	    				<p class="mb-1">● Dollar Bills count as negative points</p>
+	    				<p class="mb-1">● EX: -$5.50 points = $2.50 coins - $8.00 bills</p>
+	    				<p class="mb-1">● Bigs CANNOT deny dollar bills</p>
+	    				<p class="mb-1">● At the end of fundraiser, bottom 3 bigs will be pied!</p>
+	    			</div>		
+	    			
+		    	</div>
+		    	<div class="col-md-6">
+		    		<img src="images/coinjar.png" class="coinjar mx-auto d-block">
+		    	</div>
+    		</div>
+
+    		<p class="mb-0 mt-1" id="stats"><a class="btn btn-primary btn-lg" href="http://www.cauci.com/index.html" target="_blank">Learn more about CAUCI &raquo;</a></p>
+    	</div>
+    </div >
+
+    <div class="container-fluid">
+    	<div class="row">
+    		<div class="col-md-6 offset-md-3 text-center border mb-4 total-fundraised">
+    			<h1 class="display-4">Total Amount Fundraised</h2>
+				<div class="col-md-10 offset-md-1"><hr/></div>
+				<!--Input Total Amount Fundraised -->
+    			<h1 class="display-4">$1200</h2>
+    		</div>
+
+    		<div class="col-md-6">
+	    		<div class="col-md-12 text-center">
+	    			<h1 class="display-4">Fun Stats</h1>
+	    		</div>
+    			<div class="col-md-10 offset-md-1 text-left">
+    				<hr/>
+    				<h1 class="display-5 mb-3"> <i class="fas fa-angle-double-right"></i> Leading Big: Jackson</h1>
+    				<h1 class="display-5 mb-3"> <i class="fas fa-angle-double-right"></i> Most Coins: Jackson ($8.50)</h1>
+    				<h1 class="display-5 mb-3"> <i class="fas fa-angle-double-right"></i> Most Dollars: Jackson ($5.50)</h1>
+    				<h1 class="display-5 mb-3"> <i class="fas fa-angle-double-right"></i> Most Fundraised: Jackson ($5.50)</h1>
+    			</div>
+    		</div>
+
+    		<div class="col-md-6">
+	    		<div class="col-md-12 text-center">
+	    			<h1 class="display-4">Fundraising Chart</h1>
+	    		</div>
+
+    			<div class="col-md-10 offset-md-1"><hr/></div>
+
+	    		<div class="chart ml-2" id="piechart">
+	    			<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+	    			<script type="text/javascript">
+					// Load google charts
+					google.charts.load('current', {'packages':['corechart']});
+					google.charts.setOnLoadCallback(drawChart);
+
+					// Draw the chart and set the chart values
+					function drawChart() {
+					  var data = google.visualization.arrayToDataTable([
+					  ['Players', 'Amt Fundraised'],
+					  //Input Pie Chart Data
+					  ['1', 8.05],
+					  ['2', 2],
+					  ['3', 2],
+					  ['4', 3],
+					  ['5', 2],
+					  ['6', 7],
+					  ["hello",5],
+  					  ['Work', 8.05],
+					  ['Friends', 2],
+					  ['Eat', 2],
+					  ['TV', 3],
+					  ['Gym', 2],
+					  ['Sleep', 7],
+					  ["hello",5],
+					  ["hello",5],
+  					  ['Work', 8.05],
+					  ['Friends', 2],
+					  ['Eat', 2],
+					  ['TV', 3],
+					  ['Gym', 2],
+					  ['Sleep', 7],
+					  ["hello",5]
+					]);
+
+					// Optional; add a title and set the width and height of the chart
+					var options = {'chartArea': {width: '90%', height: '90%'}
+					};
+
+					// Display the chart inside the <div> element with id="piechart"
+					var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+					chart.draw(data, options);
+					}
+					</script>
+	    		</div>
+    		</div>
+
+    	</div>
+    </div>
+
+    <div class="container bg-white main" id="standings">
+    	<div class="row">
+    		<div class="col-md-12 text-center">
+    			<h1 class="display-4">Current Standings</h1>
+    			<p class="mb-0">Updated Since January blah blah</p>
+    		</div>
+
+			<div class="col-md-10  offset-md-1">
+				<hr/>
+			</div>
+
+    		<table class="table table-hover table-striped mb-0">
+    			<thead class="thead-dark">
+    				<tr>
+    					<th scope="col">#</th>
+    					<th scope="col">Name</th>
+    					<th scope="col">Points</th>
+    					<th scope="col">Coins</th>
+    					<th scope="col">Dollars</th>
+    				</tr>
+    			</thead>
+
+	    		<tbody>
+	    			<!-- Table Entry Data -->
+	    			<tr>
+	    				<th scope="row">1</th>
+	    				<td>Jackson</td>
+	    				<td>$-5.50</td>
+	    				<td>$-5.50</td>
+	    				<td>$-5.50</td>
+	    			</tr>
+	    			<tr>
+	    				<th scope="row">1</th>
+	    				<td>Jackson</td>
+	    				<td>$-5.50</td>
+	    				<td>$-5.50</td>
+	    				<td>$-5.50</td>
+	    			</tr>
+	    			<tr>
+	    				<th scope="row">1</th>
+	    				<td>Jackson</td>
+	    				<td>$-5.50</td>
+	    				<td>$-5.50</td>
+	    				<td>$-5.50</td>
+	    			</tr>	    			
+	    			<tr>
+	    				<th scope="row">1</th>
+	    				<td>Jackson</td>
+	    				<td>$-5.50</td>
+	    				<td>$-5.50</td>
+	    				<td>$-5.50</td>
+	    			</tr>
+	    			<tr>
+	    				<th scope="row">1</th>
+	    				<td>Jackson</td>
+	    				<td>$-5.50</td>
+	    				<td>$-5.50</td>
+	    				<td>$-5.50</td>
+	    			</tr>
+	    			<tr class="table-danger">
+	    				<th scope="row">1</th>
+	    				<td>Jackson</td>
+	    				<td>$-5.50</td>
+	    				<td>$-5.50</td>
+	    				<td>$-5.50</td>
+	    			</tr>
+	    		</tbody>
+    		</table>
+    	</div>
+    </div>
+
+	<!-- Bootstrap core JavaScript
+    ================================================== -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+
+</body>
+</html>
