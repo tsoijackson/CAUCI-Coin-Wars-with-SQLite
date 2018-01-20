@@ -14,3 +14,5 @@ board officers. At the end of the 10 weeks, the top three players win and get a 
 Currently the point of this small project is to host a website that has a table revealing the players and their stats. The website
 would be updated weekly and would be hopefully be a way for general members at CAUCI to help keep track of the fundraising game!
 
+
+Website: https://ca-fundraiser.github.io/Coin-Wars/
