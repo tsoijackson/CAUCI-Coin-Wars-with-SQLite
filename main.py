@@ -19,7 +19,7 @@ def create_table(conn: sqlite3):
 
 def select_player_by_points(conn: sqlite3) -> [Player]:
     result = []
-    command = ('Select * FROM coinwars_db ORDER BY points, coins DESC;')
+    command = ('Select * FROM coinwars_db ORDER BY points DESC, coins ASC;')
     for i in conn.cursor().execute(command):
         result.append(Player(i[0], "{:.2f}".format(float(i[1])), "{:.2f}".format(i[2]), "{:.2f}".format(i[3])))
     return result
@@ -216,6 +216,7 @@ def main_interface():
             clear_all_players(conn)
         elif response == "Q":
             print("Exiting Menu ...")
+            conn.close()
             pass
         else:
             print("Please Enter a Letter Choice on the Menu")
